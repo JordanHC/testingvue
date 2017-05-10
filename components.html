@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<child :text="message"></child>
+		<child :text="message"></child>
+		<child :text="message"></child>
+		<child :text="message"></child>
+	</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.2/vue.min.js"></script>
+	<script type="text/javascript">
+
+		Vue.component('child', {
+			props: ['text'],
+			template: `<div>{{ text }}</div>`
+		});
+
+	 	new Vue({
+	 		el: '#app',
+	 		data() {
+	 			return {
+	 				message: 'hello there!!'
+	 			}
+	 		}
+	 	});
+
+	</script>
+	<style type="text/css">
+		#app {
+			height: 100vh;
+			width: 100vw;
+			font-size: 20px;
+			padding: 40px;
+			transition: 0.2s linear;
+		}
+	</style>
+</body>
+</html>
